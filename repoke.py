@@ -14,7 +14,7 @@ def repoke(login, password, refresh_delay, poke_delay):
 
     options = Options()
     options.headless = True
-    driver = webdriver.Firefox(executable_path="geckodriver.exe", options=options)
+    driver = webdriver.Firefox(executable_path="geckodriver", options=options)
     driver.get("http://facebook.com/pokes")
 
     logging.info("Logging started")
