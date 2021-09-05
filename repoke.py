@@ -14,7 +14,7 @@ def repoke(login, password, refresh_delay, poke_delay):
 
     options = Options()
     options.headless = True
-    driver = webdriver.Firefox(executable_path="geckodriver", options=options)
+    driver = webdriver.Firefox(executable_path="./geckodriver", options=options)
     driver.get("http://facebook.com/pokes")
 
     logging.info("Logging started")
@@ -31,8 +31,7 @@ def repoke(login, password, refresh_delay, poke_delay):
 
         pokes = driver.find_elements_by_xpath("//span[text()='Odpowiedz na zaczepkę']")
 
-        if pokes:
-            logging.info(f"{len(pokes)} pokes detected")
+        logging.info(f"{len(pokes)} pokes detected")
 
         for poke in pokes:
             poke.click()
